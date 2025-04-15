@@ -1,16 +1,51 @@
-import rigoImageUrl from "../assets/img/rigo-baby.jpg";
-import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+// src/pages/Home.jsx
+import React from 'react';
+import { ModalConfirm } from '../components/ModalConfirm';
+import { ContactCard } from '../components/ContactCard';
+import { useNavigate } from 'react-router-dom';
 
-export const Home = () => {
+const Home = ({ contacts, onEdit, onDelete, showModal, confirmDelete, cancelDelete }) => {
+  const navigate = useNavigate();
+  return (
+    <div className="d-flex flex-column min-vh-100">
+      <header className="bg-white shadow-sm py-3 text-center">
+        <h1 className="mb-0 text-primary">Lista de Contactos</h1>
+      </header>
+      
+      <main className="flex-fill container my-4">
+      <div className="d-flex justify-content-end mb-4">
+        <button className="btn btn-success" onClick={() => navigate("/add")}>
+    Crear Contacto
+  </button>
+</div>
+        
+        {contacts && contacts.length > 0 ? (
+          contacts.map(contact => (
+            <ContactCard 
+              key={contact.id} 
+              contact={contact} 
+              onEdit={onEdit}
+              onDelete={onDelete}
+            />
+          ))
+        ) : (
+          <p className="text-center">No hay contactos en la agenda.</p>
+        )}
+      </main>
+      
+      <footer className="bg-white text-center py-3 border-top mt-auto">
+        <p className="mb-0 text-muted">© 2025 Agenda de Contactos de Víctor León</p>
+      </footer>
+      
+      {showModal && 
+        <ModalConfirm 
+          message="¿Estás seguro de que deseas eliminar este contacto?"
+          onConfirm={confirmDelete}
+          onCancel={cancelDelete}
+        />
+      }
+    </div>
+  );
+};
 
-  const {store, dispatch} =useGlobalReducer()
-
-	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-		</div>
-	);
-}; 
+export default Home;

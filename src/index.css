@@ -1,0 +1,48 @@
+/* src/index.css */
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+/* Garantiza que el footer siempre esté al final */
+html, body, #root {
+  height: 100%;
+}
+
+/* Formularios y tarjetas se apoyan en Bootstrap; estilos adicionales propios: */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Modal personalizado */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1050;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 6px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
