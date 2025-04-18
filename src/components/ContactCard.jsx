@@ -7,8 +7,8 @@ export const ContactCard = ({ contact, onEdit, onDelete }) => {
       <img 
         src={avatarDefault} 
         alt="avatar" 
-        style={{ width: "90px", height: "90px" }}
-        className="rounded-circle me-5"
+        style={{ width: "70px", height: "70px" }} 
+        className="rounded-circle me-4"
       />
       <div className="flex-grow-1">
         <h3 className="h5 mb-1 text-primary">{contact.name}</h3>

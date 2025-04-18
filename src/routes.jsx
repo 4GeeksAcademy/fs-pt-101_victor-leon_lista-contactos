@@ -1,5 +1,5 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
-import ContactList from "./pages/ContactList";
+import ContactList from "./components/ContactList";
 import { AddContact } from "./pages/AddContact";
 
 export const router = createBrowserRouter(
