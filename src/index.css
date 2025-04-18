@@ -1,6 +1,3 @@
-/* src/index.css */
-
-/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,19 +10,16 @@ body {
   color: #343a40;
 }
 
-/* Garantiza que el footer siempre esté al final */
 html, body, #root {
   height: 100%;
 }
 
-/* Formularios y tarjetas se apoyan en Bootstrap; estilos adicionales propios: */
 .container {
   max-width: 700px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Modal personalizado */
 .modal {
   position: fixed;
   top: 0; left: 0;

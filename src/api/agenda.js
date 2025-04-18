@@ -1,4 +1,3 @@
-// src/api/agenda.js
 export const API_BASE = 'https://playground.4geeks.com/contact/agendas';
 
 export async function ChechkAgenda(slug) {
