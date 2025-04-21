@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useGlobalReducer from '../hooks/useGlobalReducer';
 import { ACTIONS } from '../store';
 import Home from '../pages/Home';
-import { ChechkAgenda, fetchContacts, deleteContactApi } from '../api/agenda';
+import { CheckAgenda, fetchContacts, deleteContactApi } from '../api/agenda';
 
 const AGENDA_SLUG = 'victorleon';
 
@@ -16,7 +16,7 @@ const ContactList = () => {
   useEffect(() => {
     (async () => {
       try {
-        await ChechkAgenda(AGENDA_SLUG);
+        await CheckAgenda(AGENDA_SLUG);
         const contacts = await fetchContacts(AGENDA_SLUG);
         dispatch({ type: ACTIONS.LOAD_CONTACTS, payload: contacts });
       } catch (e) {

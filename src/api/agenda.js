@@ -1,6 +1,6 @@
 export const API_BASE = 'https://playground.4geeks.com/contact/agendas';
 
-export async function ChechkAgenda(slug) {
+export async function CheckAgenda(slug) {
   const { agendas } = await fetch(`${API_BASE}?offset=0&limit=100`, {
     headers: { accept: 'application/json' }
   }).then(r => r.json());
